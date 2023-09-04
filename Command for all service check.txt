@@ -1,0 +1,2 @@
+To check all the services are up and running .
+service --status-all

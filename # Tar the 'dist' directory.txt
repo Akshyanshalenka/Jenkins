@@ -1,0 +1,14 @@
+# Tar the 'dist' directory
+tar -cvf dist.tar dist
+
+# Move the tar file to the destination directory
+mv dist.tar /path/to/destination/directory/
+
+# Navigate to the destination directory
+cd /path/to/destination/directory/
+
+# Untar the file
+tar -xvf dist.tar
+
+# Remove the tar file
+rm dist.tar

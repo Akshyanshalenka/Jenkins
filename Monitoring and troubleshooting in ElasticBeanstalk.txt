@@ -1,0 +1,35 @@
+Monitoring and troubleshooting in Elasticbeanstalk
+
+
+As per client consideration we used to receieve alerts through a tool that is (PAGERUDTY) an upon source app.
+The alet most be 15.o and 5.o . when it is more than threshold point we get some alert
+
+
+We check Health monitoring in Elasticbeanstalk
+
+
+Instance Capacity :
+Instance - 10% to 50 % - It is in warning condition
+instance - 50 to 70% -It is in severe condition
+Instance- more than 70 It is degrade condition
+
+Event : CPU Utilization Exceeds more than 50%
+We try to run Restart the app server option 
+
+
+Event: CPU Utilization Exceeds 95.00%
+
+We try to run another instance or choose a different instance.
+
+Event: Elastic Load Balancer awseb-myapp Cannot Be Found
+
+Environment's load balancer may have been removed out-of-band. Only make changes to your environment's resources with the configuration options and extensibility provided by Elastic Beanstalk. Rebuild your environment or launch a new one.
+
+Event: EC2 Instance Launch Failure. Waiting for a New EC2 Instance to Launch...
+We create new instance 
+
+Event : No data can be transfer to the instance from 15 minutes
+
+We used terminate the instance on an immediate basis and new instance taken into the place because of auto scaling group has attached.
+
+

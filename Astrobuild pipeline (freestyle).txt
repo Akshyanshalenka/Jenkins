@@ -1,0 +1,4 @@
+sudo cp -r  /var/lib/jenkins/workspace/astrobuild  /home/ubuntu/nestorbird.com-astro/astrobuild 
+cd /home/ubuntu/nestorbird.com-astro/astrobuild
+sudo npm run build
+cp -r  /home/ubuntu/nestorbird.com-astro/astrobuild/build/dist  /var/www/html/astrobuild/build/

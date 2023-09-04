@@ -1,0 +1,21 @@
+On your Ubuntu desktop, install a VNC server such as "TightVNC" or "RealVNC".
+For example, to install TightVNC on Ubuntu, you can run the command: sudo apt-get install tightvncserver
+Start the VNC server on your Ubuntu desktop by running the command: vncserver
+Set a password for VNC when prompted.
+Make a note of the IP address and port number displayed in the output of the vncserver command.
+For example, the output may look like: New 'X' desktop is ubuntu:1
+In this case, the IP address is "ubuntu" and the port number is "1".
+On your Mac, open the "Screen Sharing" application.
+In the menu bar, go to "File" > "Connect to Server".
+Enter the VNC address in the format vnc://ip_address:port_number, replacing "ip_address" and "port_number" with the IP address and port number you noted earlier.
+For example, the VNC address may look like: vnc://192.168.1.100:1
+Click "Connect" and enter the VNC password when prompted.
+If the connection is successful, you'll now see the Ubuntu desktop on your Mac screen.
+Note that using VNC over the internet without encryption is insecure, so it's recommended to use a VPN or SSH tunnel to secure the connection.
+
+
+
+
+
+
+Regenerate response

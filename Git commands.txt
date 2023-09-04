@@ -1,0 +1,54 @@
+Git commands 
+
+1. Git init
+2. Git checkout -b
+3. Git add origin
+4. Git pull
+5. Git clone
+6. Git add.
+7. Git commit 
+8. Git push origin master/main
+9. Git log-
+10.Git merge 
+11.Git rebase
+12. Git revert
+13. Git revert head 
+14. Git rm
+15.git diff
+
+
+To resolve merge conflict on commit satage.
+
+git fetch origin
+git reset --hard origin/master
+git reset --hard upstream/development
+
+You have divergent branches and need to specify how to reconcile them.
+
+To resolve above issue we can run above command 
+
+
+
+
+
+To delete a branch in local 
+ gitr branch -d [branch name]
+
+
+If the branch has not been merged and you want to force delete it, the command would be:
+
+git branch -D [branch name]
+
+
+command to remove stage file in git
+
+git reset -- <file>
+
+
+command to remove untracked file in git
+git clean -f -d
+
+
+
+git clone from a particular repo
+git clone -b development https://gitlab.nestorbird.com/nestorbird/nestorbird/nestorbird.com-astro.git

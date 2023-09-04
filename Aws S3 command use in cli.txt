@@ -1,0 +1,29 @@
+To list all the buckets in your AWS account:
+aws s3 ls
+
+To create a new S3 bucket:
+aws s3 mb s3://bucket-name
+
+To upload a file to an S3 bucket:
+aws s3 cp file.txt s3://bucket-name/path/to/destination
+
+To download a file from an S3 bucket:
+aws s3 cp s3://bucket-name/path/to/file.txt file.txt
+
+To sync a local directory with an S3 bucket:
+aws s3 sync /path/to/local/directory s3://bucket-name/path/to/destination
+
+To delete an object from an S3 bucket:
+aws s3 rm s3://bucket-name/path/to/object
+
+To delete all objects in an S3 bucket:
+aws s3 rm s3://bucket-name --recursive
+
+To copy an object from one S3 bucket to another:
+aws s3 cp s3://source-bucket-name/path/to/object s3://destination-bucket-name/path/to/destination
+
+To set the ACL (Access Control List) for an object in an S3 bucket:
+aws s3api put-object-acl --bucket bucket-name --key path/to/object --acl public-read
+
+To get the versioning status of an S3 bucket:
+aws s3api get-bucket-versioning --bucket bucket-name

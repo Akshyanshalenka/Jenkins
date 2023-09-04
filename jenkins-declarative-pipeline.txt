@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    stages {
+        stage('Tar code') {
+            steps {
+                sh 'tar -czf dist.tar.gz -C /var/lib/jenkins/workspace/ByPassLinesDev dist/'
+            }
+        }
+        stage('Transfer code') {
+            steps {
+                sh 'scp -i /var/lib/jenkins/.ssh/id_rsa /var/lib/jenkins/workspace/Bypasslinesdev.nestorhawk.com/dist.tar.gz ubuntu@65.0.161.137:/home/ubuntu/ByPassLines'
+            }
+        }
+        stage('Untar code on remote server') {
+            steps {
+                sh 'ssh -i /var/lib/jenkins/.ssh/id_rsa ubuntu@65.0.161.137 "tar -xzf /home/ubuntu/ByPassLines/dist.tar.gz"'
+            }
+        }
+        stage('Replace code in destination directory') {
+            steps {
+                sh 'ssh -i /var/lib/jenkins/.ssh/id_rsa ubuntu@65.0.161.137 "cp -r /home/ubuntu/ByPassLines/dist/* /var/www/html/bypasslinesdev.com/dist/"'
+            }
+        }
+        stage('Clear tar and untar directories') {
+            steps {
+                sh 'rm -rf /var/lib/jenkins/workspace/Bypasslinesdev.nestorhawk.com/dist.tar.gz'
+                sh 'ssh ubuntu@65.0.161.137 "rm -rf /home/ubuntu/ByPassLines/dist /path/to/destination/dist.tar.gz"'
+            }
+        }
+    }
+}

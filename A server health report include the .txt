@@ -1,0 +1,31 @@
+A server health report include the information on the perfomance and capacity of the server.The following one is a format of dev server health report.
+
+
+* Performance Metrics
+* Capacity Metrics
+
+The steps have followed in the dev-server are listed below.
+
+1. Performance Metrics 
+   CPU Usage:     1.5% (rarely use)
+   the 'top' command helps to display the real-time view of the system processess.
+   
+   
+   Memory Usage:  304676 
+    The 'free -h command to display the memory usage in a humane readable format.   
+
+   Disk Usage:    1.4m
+    The 'df -h' command will display a summary of the disk usage on all mounted filesystems.
+   
+   Network Usage: 62.5 kb 
+   The 'iftop' command willm display a real-time view of the network traffic on all network interfaces.
+
+   Response Time: 2.05ms
+   The 'ping' helps to show the response time of a connection.
+
+2. Capacity Metrics
+   Storage Capacity:3.2G
+   Memory Capacity:30G
+   CPU Capacity:64-bit
+
+

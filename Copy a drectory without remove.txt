@@ -1,0 +1,4 @@
+rsync -a --delete /path/to/new_directory/ /path/to/existing_directory/
+rsync -a --delete dist/ /var/www/html/astrobuild/build/dist/
+
+

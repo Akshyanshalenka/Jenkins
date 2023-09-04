@@ -1,0 +1,23 @@
+Please follow the required steps below:
+
+IAM(Identity Access Management)
+
+IAM user -rajattriphati
+aws aceess key :-AKIAXHTPCEM6BFKAY3NC
+aws secret key :-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
+
+Policies:
+AmazonS3FullAccess	
+AmazonEventBridgeFullAccess	
+AmazonDynamoDBFullAccess
+AmazonCognitoPowerUser
+Awslambdafullaccess
+
+Aws S3 bucket Name :-cms-testing-webiny
+Note:-download aws cli in your system to access the dynamodb and s3 bucket through CLI.
+use below command to check list of bucket 
+
+ aws s3 ls s3://cms-testing-webiny/
+
+
+

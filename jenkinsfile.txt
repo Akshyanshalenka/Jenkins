@@ -1,0 +1,66 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'Checkout', defaultValue: 'master', description: 'Name of Branch/Commit/Tag')
+        booleanParam(name: 'IsTag', defaultValue: false, description: 'Select if you want to checkout a tag')
+    }
+
+    stages {
+        stage('Git Clone') {
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[
+                        name : "refs/${params.IsTag == true ? 'tags': 'heads' }/${params.Checkout}"
+                    ]],
+                    userRemoteConfigs: [[
+                        url: 'git@github.com:GCU/test-node.git',
+                        credentialsId: 'dev-ops-git-credentials'
+                    ]],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [[
+                        $class: 'SubmoduleOption',
+                        disableSubmodules: false,
+                        parentCredentials: true,
+                        recursiveSubmodules: true,
+                        reference: '',
+                        trackingSubmodules: false
+                    ]],
+                    submoduleCfg: []
+                ])
+            }
+        }
+        stage('AWS ECR Authentication') {
+            steps {
+                sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 607136218464.dkr.ecr.ap-south-1.amazonaws.com'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t test-node .'
+                sh 'docker tag test-node:latest 607136218464.dkr.ecr.ap-south-1.amazonaws.com/test-node:latest'
+            }
+        }
+        stage('Push Docker Image') {
+            steps {
+                sh 'docker push 607136218464.dkr.ecr.ap-south-1.amazonaws.com/test-node:latest'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'aws ecs update-service --cluster test-node --service test-node --force-new-deployment'
+            }
+        }
+    }
+    post {
+        always {
+            sh 'docker image rm test-node || true'
+            sh 'docker image rm 607136218464.dkr.ecr.ap-south-1.amazonaws.com/test-node || true'
+            deleteDir()
+            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: content.GCU.com",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+        }
+    }
+}

@@ -1,0 +1,5 @@
+docker run -d --name mariadb-10.6 -p 3310:3306 -e MARIADB_ROOT_PASSWORD=justdoit@94  mariadb:10.6 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --skip-character-set-client-handshake --skip-innodb-read-only-compressed
+
+
+
+bench --site [site-name] enable-scheduler

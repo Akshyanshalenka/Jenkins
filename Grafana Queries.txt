@@ -1,0 +1,20 @@
+Ram Usage :
+1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)
+
+
+Cpu Usage:
+100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+
+
+Disk Usage :
+100 * (1 - (node_filesystem_free_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}))
+
+
+Network Usage :
+rate(node_network_receive_bytes_total[5m])
+
+rate(node_network_transmit_bytes_total[5m])
+
+
+Memory Usgae:
+(node_memory_Active_bytes / node_memory_MemTotal_bytes)

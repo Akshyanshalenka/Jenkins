@@ -1,0 +1,26 @@
+Docker Commands 
+
+docker pull
+docker run 
+docker run -d <imagename>-to run in a detach mode 
+docker images
+docker ps 
+docker ps -a
+docker execute -it 
+docker start /stope <container name>
+docker run -p <host_port>:<container_port> <image_name>-For port forwading
+docker inspect <container_name>
+docker logs (used it optional)
+docker build -t
+docker builder prune -af
+docker build --no-cache
+
+docker container prune (delete all stopped container)
+
+docker system df -use to check memory space 
+to remove unused images .
+docker image prune 
+
+To remove unused volume run below command .
+
+docker volume prune

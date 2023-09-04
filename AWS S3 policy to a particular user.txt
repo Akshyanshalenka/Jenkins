@@ -1,0 +1,32 @@
+Need to follow the below steps to give access to a particular a user to access a bucket in S3 
+
+
+1. Add an user in IAM role  
+2. create the below poolicy in policy generation to meet the above expectations 
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "s3:ListBucket"
+          ],
+          "Resource": [
+              "arn:aws:s3:::bucketname"
+          ]
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "s3:GetObject"
+          ],
+          "Resource": [
+              "arn:aws:s3:::bucketname/*"
+          ]
+      }
+  ]
+}
+
+
+
+2.Attach the above policy directly.

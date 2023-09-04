@@ -1,0 +1,42 @@
+Deleted DNS entries
+
+
+1. a:_007d24d9634f61fd9420c15f8a06c5a2.frappe.cloud - 	68.183.89.27
+
+2. a:_03380a672de247e58cf56fd00e641bae.frappe.cloud  -      68.183.89.27
+
+3. a:_089dd5e75e9298b873557ab39e0ce664.frappe.cloud  -      
+
+4. a:_0b5bfdff56c673c070ac9c70c582a23e.frappe.cloud  -
+
+5. a:_0d05c8f1cb7ad2f27b492d2ce9bcc1b0.frappe.cloud  -
+
+6. a:_14541f77df1234a32a0b982e90f25c33.frappe.cloud  -
+
+7. a:_1589f542092a01dd21c10cf6aea95719.frappe.cloud  -
+
+8. a:_176854c36cd64ff39ccb75602d5165e5.frappe.cloud  -
+
+9. a:_1a62ffb1c5f4aaf4b7919e72a01cd6ec.frappe.cloud  -
+
+10. a:_207463e6344e266666a9dc449b84c400.frappe.cloud  -
+
+11. a:_21bf8952b79aa89890e13ffa123b36b4.frappe.cloud  -
+
+12. a:_27424415f324af8a96f955810f272ffd.frappe.cloud  -
+
+13. _27424415f324af8a96f955810f272ffd.weasiadev
+
+14. _74fa1cf4478e3550c14b0c9b9ac7b93d
+
+15. _340aefab6e878dae6ae420b8063e3a3a
+
+16. _395e11c1fce1dfcaeb3b60ecb033ae8b
+
+17. _4e6e0e957babc146a2990b351c7a6a4f
+
+18. _5338d9c895a6336bbbbbcf713e1f2018
+
+19. bs         54.226.124.187
+
+

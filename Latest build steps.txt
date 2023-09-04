@@ -1,0 +1,13 @@
+When we need to change the latest build or dist folder in as per the ticket in the server , follows below 
+
+1. Pull the code from repo
+
+cd /home/devops/bypasslindev/
+
+then run below command
+
+git pull origin development/branch name 
+
+the run the below command to change the dist folder
+
+rsync -a --delete dist/ /var/www/html/astrobuild/build/dist/

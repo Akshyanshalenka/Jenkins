@@ -1,0 +1,126 @@
+The terminology we use in our project 
+
+a. Frontend
+b. Backend
+c. Server
+d. Client
+e. Web Panel
+f. Mobile App
+g. API
+h. Cloud
+i. Database
+j. Cache
+k. Static Files
+l. Proxy
+
+The tools are used
+AWS(EC2,S3,ElasticBeanstalk,Cloudwatch)
+jenkins
+Docker
+Mysql
+mongoDB
+Terraform
+Graffana
+NOdejs
+NPM
+PM2
+Nginx(web-server)
+
+
+
+As Devops engineer  role 
+
+Project name -LMS 
+
+Cloud-based Learning management system of Grand Canyon University. It allows GCU students to learn online using the class feature. Every class has Instructors assigned. Students can participate in discussion forums, submit assignments and can take online quizzes etc.
+
+
+
+Daily activites-
+
+We (our team) used to manage infrastruture in AWS
+EC2-created instances 
+    assign elastic ip and added custom port and did all the configuration 
+    Trouble shooting 
+    change port and connect to the instance 
+ S3 -used for app backup
+     creation of bucket
+
+
+Elastic Beanstalk -
+maintaining app-server
+check the status of instance 
+like whether the instance is in severe state degrade state or warning state
+
+
+Cloudwatch-to check logs in loggroups and loginsight
+added widges as per requirement to check how many document has processed per day
+
+Jnekins - Installed and configuration from Scratch  given credentials access,added ssh-key to run jenkins job ,added .env file in jenkins file.
+we create two pipeline basically one is API and another one is WEB
+
+Api we use node js , npm tool for build and we use pm2 for easily restart the server 
+
+In API-Pipeline the below steps we do
+ 1. In first stage the initialization is done
+ 2.In 2nd stage the code can clone from repo
+ 3.we setup the environment nothing but our all configuration how the work is done
+ 4.then the build is done by NPM tool , the code pulled from github (package.jsonfikle)
+ 5.then the deploy is done in the destination path at the same time save in pm2 
+ 6. Workspace will be wipeout
+
+Docker project -
+Installation and configuration
+ Created a docker file (developer) push the same docker file after build is done 
+by followd some command the same command added into the pipeline.
+
+create images from the dockerfile
+pull the image from docker hub using docker pull lts command 
+create container and run jenkins on docker hosted on EC2 , by portforwarding 
+run docker commands.
+
+
+ Nodejs-
+
+ NodeJS with N package/installation for jenkins job
+ Pm2- PM2 services and it’s arguments(pm2 start, pm2 stop, pm2 logs,pm2 delete)
+
+
+Terraform-
+created terraform script to create Ec2 instances , S3 bucket on immidiate basis.
+Ec2 module, S3 Module.
+
+
+MongoDB-
+Mongobd with replica set
+ . NoSQLbooster as a client to connect DB server
+ . Created users and given access of databases to the developers
+
+Nginx-
+
+Installation 
+Backend configuration
+added listening port
+
+Git-
+a. Created repos
+i. Add existing project to the git repository
+ii. Build from scratch
+b. Cloning a repo
+c. Git add, remove, commit, push and status commands and its understanding.
+d. Create branch 
+e. View branches
+f. Git logs
+
+Mysql-
+
+We used to get some ticket and work on that
+for example one facultyis unable to access any class
+ for the above issue we first check in the HALO learn app where we can see which is faculty is assigned with which class then we need to immpersonate the faculty to the particular classroom 
+Then we write below query
+(select,run,update,delete,like)
+
+
+
+
+

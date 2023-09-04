@@ -1,0 +1,12 @@
+Steps to install certbot .
+
+1.sudo apt install snapd
+
+2.sudo snap install core; sudo snap refresh core
+
+3.sudo snap install --classic certbot
+
+
+4.sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
+5.sudo certbot --nginx -d  nbcheck.nestorbird.com

@@ -1,0 +1,12 @@
+RDP connection to the live server -1 (Windows)
+
+
+
+1. open RDP 
+put server ip 
+then click on connect 
+   
+2. username -Administrator 
+3. password -given password
+4. after connection successful
+5. click on ssms then  run the query 

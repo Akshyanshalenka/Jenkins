@@ -1,0 +1,5 @@
+Office Local Server Cred.
+IP 122.176.34.94 port: 22956
+User: devops
+Pass: jY$Am}Tema8QDS7W
+passwd:indil99#

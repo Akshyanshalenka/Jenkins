@@ -1,0 +1,41 @@
+pipeline {
+  agent any
+  
+  stages {
+    stage('Build') {
+      steps {
+        sh 'sudo Scp -i own-key.pem nestorbird.com-astro-development.zip ubuntu@65.0.130.32'
+        sh 'sudo apt-get install nginx -y' // Install project dependencies
+        sh 'sudo apt-get install curl' // Build the project
+        sh 'sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -'
+        sh 'sudo apt-get install -y nodejs'
+      }
+    }
+    
+    stage('Deploy') {
+      environment {
+        SERVER = '65.0.130.32' // Replace with your server address
+        SSH_KEY = credentials('own-key.pem') // Replace with your SSH key credentials ID
+      }
+      steps {
+        sshagent(['own-key.pem']) { // Use SSH key to authenticate with server
+          sh "rsync -avz -e ssh build/ ubuntu@65.0.130.32:/var/www/html" // Deploy the project using rsync
+          sh "ssh ubuntu@65.0.130.32 'sudo systemctl restart nginx'" // Restart Nginx to apply changes
+        }
+      }
+    }
+  }
+  
+  post {
+    success {
+      echo 'Deployment succeeded!' // Notify when deployment succeeds
+    }
+    failure {
+      echo 'Deployment failed!' // Notify when deployment fails
+    }
+  }
+  
+  triggers {
+    gitlab(triggerOnPush: true, branchFilterType: 'All') // Trigger the pipeline when changes are pushed to GitLab
+  }
+}

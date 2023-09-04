@@ -1,0 +1,1 @@
+$ scp -r -i pem-key.pem nestorbird.com-astro-development.zip ubuntu@15.206.179.55:~/var/www/html/
