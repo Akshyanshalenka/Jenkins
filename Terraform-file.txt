@@ -1,0 +1,10 @@
+
+          resouce type  
+resource "local_file"    "my_file" {
+	filename = "/home/ubuntu/terraform-practice/tf.txt
+	content = "This is a file from terraform"
+
+
+
+
+}

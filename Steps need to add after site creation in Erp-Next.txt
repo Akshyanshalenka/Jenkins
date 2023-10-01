@@ -1,0 +1,25 @@
+Steps need to add after site creation in Erp-next.
+
+
+The commands I mentioned, such as bench migrate, bench build, and bench clear-cache, are typically run after the site creation is done. Here's the usual sequence of steps when setting up an ERPNext site:
+
+Create the Site: You first create an ERPNext site using the bench new-site command. This is done once at the beginning to set up a new site. For example:
+
+bash
+Copy code
+bench new-site site_name
+Install ERPNext and Apps: After creating the site, you install ERPNext and any additional apps you need on that site using the bench --site command. This step includes installing ERPNext's core functionality and any custom apps you want to use.
+
+bash
+Copy code
+bench --site site_name install-app erpnext
+Make Code Changes: After the site is created and apps are installed, you can start making code changes, customizations, or adding new features to your ERPNext instance.
+
+Run Commands: The commands like bench migrate, bench build, and bench clear-cache are typically run after you've made code changes or app installations. These commands help ensure that your changes take effect and are reflected in the ERPNext site. You run them as needed during development and maintenance.
+
+bench migrate: Run it after making changes to the database schema (e.g., creating new DocTypes or fields).
+bench build: Run it after making changes to JavaScript or CSS assets.
+bench clear-cache: Run it after making changes to Python code or encountering caching issues.
+Restart ERPNext: In some cases, you might need to restart the ERPNext server using bench restart to apply all changes, especially if you made significant changes that affect the server's operation.
+
+In summary, site creation is one of the initial steps in setting up an ERPNext instance, and the mentioned commands are used in subsequent steps after the site is created to manage and update the ERPNext environment as you develop and customize your ERPNext instance.

@@ -1,0 +1,3 @@
+When we need to add ssl for a particular site use below command.
+
+sudo certbot --nginx -d erp.nestorhawk.com
